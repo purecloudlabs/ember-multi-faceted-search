@@ -4,8 +4,12 @@ import layout from './template';
 export default Ember.Component.extend({
   layout,
   applied: [],
+  search: null,
 
   actions: {
+    removeSearch() {
+      this.get('removeSearch')();
+    },
     removeFacet(facet) {
       this.get('toggleFacet')(facet, facet.terms[0]);
     },

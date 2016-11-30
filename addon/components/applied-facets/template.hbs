@@ -1,5 +1,11 @@
 <div class="col-sm-12 well search-facet-applied">
   <label><strong>Your Selections:</strong></label>
+  {{#if search}}
+    <span class="btn btn-default">
+      <span class="category-label">Search: {{search}}</span>
+      <button type="button" class="close" aria-label="Remove" {{action "removeSearch"}}><span aria-hidden="true">&times;</span></button>
+    </span>
+  {{/if}}
   {{#each applied as |facet|}}
     {{#if facet.multipleSelected}}
       <span class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Selected: {{facet.selectedValues}}">

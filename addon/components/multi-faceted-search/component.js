@@ -5,9 +5,22 @@ export default Ember.Component.extend({
   layout,
   facetsWrapperClass: "col-sm-4",
   dataWrapperClass: "col-sm-8",
+  searchWrapperClass: "",
   facets: [],
+  search: null,
+  _search: "",
+
+  noSearch: Ember.computed.none('search'),
 
   actions: {
+    addSearch() {
+      this.set('search', this.get('_search'));
+      this.get('searchAction')();
+    },
+    removeSearch() {
+      this.setProperties({ search: "", _search: ""});
+      this.get('searchAction')();
+    },
     removeAllFacets() {
       let facets = this.get('facets');
       facets.forEach( (facet) => {

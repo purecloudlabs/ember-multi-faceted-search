@@ -1,10 +1,22 @@
 <div class="{{facetsWrapperClass}}">
+  {{#unless noSearch}}
+    <div class="form-group {{searchWrapperClass}}">
+      <div class="input-group">
+        {{input type="text" value=_search placeholder="Search audit events" class="form-control" enter="addSearch"}}
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="button" aria-label="Search" {{action "addSearch"}}>
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  {{/unless}}
   {{#each facets as |facet|}}
     {{collapsable-facet facet=(mut facet) toggleFacet=(action "toggleFacet")}}
   {{/each}}
 </div>
 <div class="{{dataWrapperClass}}">
-  {{applied-facets applied=(mut facets) toggleFacet=(action "toggleFacet")}}
+  {{applied-facets applied=(mut facets) search=(mut search) toggleFacet=(action "toggleFacet") removeSearch=(action 'removeSearch')}}
   {{yield}}
 </div>
 <button onclick={{action 'removeAllFacets'}}>REMOVE ALL FROM COMPONENT!</button>

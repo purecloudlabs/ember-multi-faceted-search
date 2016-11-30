@@ -2,12 +2,11 @@ import Ember from 'ember';
 
 let Facet = Ember.Object.extend({
   category: "",
-  type: "", // "checkbox" or "link" or "search"
+  type: "", // "checkbox" or "link"
   terms: [], // each term: { value: "", count: num.optional, selected: boolean }
 
   checkbox: Ember.computed.equal('type', 'checkbox'),
   link: Ember.computed.equal('type', 'link'),
-  search: Ember.computed.equal('type', 'search'),
 
   selected: Ember.computed.filterBy('terms', 'selected', true),
   multipleSelected: Ember.computed.gt('selected.length', 1),
