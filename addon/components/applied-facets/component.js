@@ -7,11 +7,11 @@ export default Ember.Component.extend({
 
   actions: {
     removeFacet(facet) {
-      this.get('toggleFacet')(facet.terms[0]);
+      this.get('toggleFacet')(facet, facet.terms[0]);
     },
     removeFacets(facet) {
       let selected = Ember.get(facet, 'selected');
-      selected.forEach((term) => this.get('toggleFacet')(term))
+      selected.forEach((term) => this.get('toggleFacet')(facet, term));
     }
   }
 });

@@ -11,7 +11,7 @@ export default Ember.Component.extend({
       this.toggleProperty('collapsed');
     },
     toggleFacet(term) {
-      this.get('toggleFacet')(term);
+      this.get('toggleFacet')(this.get('facet'), term);
       this.notifyPropertyChange('facet');
     }
   }

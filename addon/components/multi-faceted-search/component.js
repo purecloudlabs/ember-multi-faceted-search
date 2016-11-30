@@ -1,6 +1,5 @@
 import Ember from 'ember';
 import layout from './template';
-import Facet from './facet';
 
 export default Ember.Component.extend({
   layout,
@@ -17,9 +16,13 @@ export default Ember.Component.extend({
       });
       this.notifyPropertyChange('facets');
     },
-    toggleFacet(term) {
-      let selected = term.selected;
+    toggleFacet(facet, term) {
+      let selected = Ember.get(term, 'selected');
       if (typeof selected === 'undefined' || !selected) {
+        if (Ember.get(facet, 'link')) {
+          let terms = Ember.get(facet, 'terms');
+          terms.forEach((term) => Ember.set(term, 'selected', false));
+        }
         Ember.set(term, 'selected', true);
         this.get('addFacet')();
       } else {
