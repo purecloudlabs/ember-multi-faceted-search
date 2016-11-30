@@ -1,0 +1,30 @@
+<div class="search-facet-group panel panel-default">
+  <div class="facet-label panel-heading">
+    <h4 class="panel-title">
+      <a href="#{{facet.category}}-filters" data-toggle="collapse" {{action "toggleCollapse" preventDefault=false}}>
+        {{facet.category}}
+        <span class="glyphicon {{if collapsed "glyphicon-triangle-bottom" "glyphicon-triangle-right"}}" aria-hidden="true"></span>
+      </a>
+    </h4>
+  </div>
+  <div class="panel-collapse collapse" id="{{facet.category}}-filters">
+    <div class="panel-body">
+    {{#each facet.terms as |term|}}
+      <div class="term">
+        <span class="term">
+        {{#if facet.link}}
+          <a href="#" class="{{if term.selected "active"}}" {{action "toggleFacet" term}}>{{term.value}}</a>
+        {{else if facet.checkbox}}
+          <label>
+          {{input type="checkbox" checked=term.selected click=(action "toggleFacet" term)}}
+            {{term.value}} - {{term.selected}}
+            </label>
+        {{/if}}
+        </span>
+      </div>
+    {{else}}
+      <div>Nothing to display</div>
+    {{/each}}
+    </div>
+  </div>
+</div>

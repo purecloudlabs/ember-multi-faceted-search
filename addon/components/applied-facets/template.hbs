@@ -1,0 +1,15 @@
+<div class="col-sm-12 well search-facet-applied">
+  <label><strong>Your Selections:</strong></label>
+  {{#each applied as |facet|}}
+    {{#if facet.multipleFacets}}
+      <span class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Selected: {{facet.selectedValues}}">
+        <span class="category-label">{{facet.category}}: {{facet.selected.length}} Selected </span><button type="button" class="close" aria-label="Remove" {{action "removeFacets" facet}}><span aria-hidden="true">&times;</span></button>
+      </span>
+    {{else if facet.atleastOneFacet}}
+      <span class="btn btn-default">
+        <span class="category-label">{{facet.category}}: {{facet.selectedValues}}</span>
+        <button type="button" class="close" aria-label="Remove" {{action "removeFacet" facet}}><span aria-hidden="true">&times;</span></button>
+      </span>
+    {{/if}}
+  {{/each}}
+</div>

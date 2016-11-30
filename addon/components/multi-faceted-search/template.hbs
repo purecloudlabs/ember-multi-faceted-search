@@ -1,0 +1,10 @@
+<div class="{{facetsWrapperClass}}">
+  {{#each facets as |facet|}}
+    {{collapsable-facet facet=(mut facet) toggleFacet=(action "toggleFacet")}}
+  {{/each}}
+</div>
+<div class="{{dataWrapperClass}}">
+  {{applied-facets applied=(mut facets) toggleFacet=(action "toggleFacet")}}
+  {{yield}}
+</div>
+<button onclick={{action 'removeAllFacets'}}>REMOVE ALL FROM COMPONENT!</button>
