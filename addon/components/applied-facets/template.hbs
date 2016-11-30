@@ -14,7 +14,7 @@
     {{else if facet.atleastOneSelected}}
       <span class="btn btn-default">
         <span class="category-label">{{facet.category}}: {{facet.selectedValues}}</span>
-        <button type="button" class="close" aria-label="Remove" {{action "removeFacet" facet}}><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" aria-label="Remove" {{action "removeFacets" facet}}><span aria-hidden="true">&times;</span></button>
       </span>
     {{/if}}
   {{/each}}

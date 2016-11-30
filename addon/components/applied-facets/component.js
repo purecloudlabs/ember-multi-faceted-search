@@ -10,9 +10,6 @@ export default Ember.Component.extend({
     removeSearch() {
       this.get('removeSearch')();
     },
-    removeFacet(facet) {
-      this.get('toggleFacet')(facet, facet.terms[0]);
-    },
     removeFacets(facet) {
       let selected = Ember.get(facet, 'selected');
       selected.forEach((term) => this.get('toggleFacet')(facet, term));

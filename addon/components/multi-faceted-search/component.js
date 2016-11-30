@@ -8,8 +8,8 @@ export default Ember.Component.extend({
   searchWrapperClass: "",
   facets: [],
   search: null,
-  _search: "",
 
+  _search: "",
   noSearch: Ember.computed.none('search'),
 
   actions: {
@@ -34,7 +34,7 @@ export default Ember.Component.extend({
       if (typeof selected === 'undefined' || !selected) {
         if (Ember.get(facet, 'link')) {
           let terms = Ember.get(facet, 'terms');
-          terms.forEach((term) => Ember.set(term, 'selected', false));
+          terms.forEach((t) => Ember.set(t, 'selected', false));
         }
         Ember.set(term, 'selected', true);
         this.get('addFacet')();
