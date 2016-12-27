@@ -11,8 +11,8 @@
       </div>
     </div>
   {{/unless}}
-  {{#each facets as |facet|}}
-    {{collapsable-facet facet=(mut facet) toggleFacet=(action "toggleFacet")}}
+  {{#each facets as |facet index|}}
+    {{collapsable-facet facet=(mut facet) initOpen=(if index false true) toggleFacet=(action "toggleFacet")}}
   {{/each}}
 </div>
 <div class="{{dataWrapperClass}}">

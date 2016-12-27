@@ -4,6 +4,7 @@ import layout from './template';
 export default Ember.Component.extend({
   layout,
   collapsed: false,
+  initOpen: false,
   facet: {},
 
   actions: {
@@ -14,5 +15,9 @@ export default Ember.Component.extend({
       this.get('toggleFacet')(this.get('facet'), term);
       this.notifyPropertyChange('facet');
     }
+  },
+  didReceiveAttrs() {
+    let open = (this.get('initOpen') || this.get('facet.atleastOneSelected'));
+    this.set('open', open);
   }
 });
