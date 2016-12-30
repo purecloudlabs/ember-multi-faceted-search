@@ -42,26 +42,24 @@ export default Ember.Component.extend({
       this.setProperties({ search: "", _search: ""});
       this.get('searchAction')();
     },
-    removeAllFacets() {
-      let facets = this.get('facets');
-      facets.forEach( (facet) => {
-        let terms = facet.get('terms');
-        terms.forEach( (term) => Ember.set(term, 'selected', false) );
-      });
-      this.notifyPropertyChange('facets');
-    },
     toggleFacet(facet, term) {
-      let selected = Ember.get(term, 'selected');
-      if (typeof selected === 'undefined' || !selected) {
-        if (Ember.get(facet, 'link')) {
-          let terms = Ember.get(facet, 'terms');
-          terms.forEach((t) => Ember.set(t, 'selected', false));
-        }
-        Ember.set(term, 'selected', true);
-        this.get('addFacet')();
-      } else {
-        Ember.set(term, 'selected', false);
+      if (Array.isArray(term)) {
+        // remove all terms from facet
+        term.forEach((t) => Ember.set(t, 'selected', false));
         this.get('removeFacet')();
+      } else {
+        let selected = Ember.get(term, 'selected');
+        if (typeof selected === 'undefined' || !selected) {
+          if (Ember.get(facet, 'link')) {
+            let terms = Ember.get(facet, 'terms');
+            terms.forEach((t) => Ember.set(t, 'selected', false));
+          }
+          Ember.set(term, 'selected', true);
+          this.get('addFacet')();
+        } else {
+          Ember.set(term, 'selected', false);
+          this.get('removeFacet')();
+        }
       }
     }
   }
