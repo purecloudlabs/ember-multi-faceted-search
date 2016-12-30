@@ -1,14 +1,14 @@
-<div class="search-facet-group panel panel-default">
-  <div class="facet-label panel-heading">
-    <h4 class="panel-title">
+<div class="search-facet-group {{options.groupWrapperClass}}">
+  <div class="facet-label {{options.groupLabelWrapperClass}}">
+    <h4 class="{{options.groupLabelClass}}">
       <a href="#{{facet.category}}-filters" data-toggle="collapse" {{action "toggleCollapse" preventDefault=false}}>
-        {{facet.category}}
-        <span class="glyphicon {{if collapsed "glyphicon-triangle-bottom" "glyphicon-triangle-right"}}" aria-hidden="true"></span>
+        {{title-case facet.category}}
+        <span class="{{options.groupIconClass}} {{if collapsed options.groupIconClosedClass options.groupIconOpenClass}}" aria-hidden="true"></span>
       </a>
     </h4>
   </div>
-  <div class="panel-collapse collapse{{if open " in"}}" id="{{facet.category}}-filters">
-    <div class="panel-body">
+  <div class="{{options.groupListWrapperClass}} collapse{{if open " in"}}" id="{{facet.category}}-filters">
+    <div class="{{options.groupListClass}}">
     {{#each facet.terms as |term|}}
       <div class="term">
         <span class="term">
@@ -21,6 +21,9 @@
             </label>
         {{/if}}
         </span>
+      {{#if term.count}}
+        <span class="count pull-right">{{term.count}}</span>
+      {{/if}}
       </div>
     {{else}}
       <div>Nothing to display</div>

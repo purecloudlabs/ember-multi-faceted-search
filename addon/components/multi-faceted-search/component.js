@@ -3,9 +3,30 @@ import layout from './template';
 
 export default Ember.Component.extend({
   layout,
-  facetsWrapperClass: "col-sm-4",
-  dataWrapperClass: "col-sm-8",
-  searchWrapperClass: "",
+  options: {
+    search: {
+      wrapperClass: "",
+      buttonIconClass: "glyphicon glyphicon-search",
+      placeholderText: "Enter search term"
+    },
+    applied: {
+      wrapperClass: "col-sm-12 well",
+      selectedClass: "btn btn-default",
+      headingText: "Your Selections:"
+    },
+    facets: {
+      wrapperClass: "col-sm-4",
+      groupWrapperClass: "panel panel-default",
+      groupLabelWrapperClass: "panel-heading",
+      groupLabelClass: "panel-title",
+      groupIconClass: "glyphicon",
+      groupIconOpenClass: "glyphicon-triangle-right",
+      groupIconClosedClass: "glyphicon-triangle-bottom",
+      groupListWrapperClass: "panel-collapse",
+      groupListClass: "panel-body"
+    },
+    dataWrapperClass: "col-sm-8"
+  },
   facets: [],
   search: null,
 

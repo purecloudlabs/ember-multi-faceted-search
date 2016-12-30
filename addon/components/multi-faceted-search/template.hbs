@@ -1,21 +1,21 @@
-<div class="{{facetsWrapperClass}}">
+<div class="{{options.facets.wrapperClass}}">
   {{#unless noSearch}}
-    <div class="form-group {{searchWrapperClass}}">
+    <div class="form-group {{options.search.wrapperClass}}">
       <div class="input-group">
-        {{input type="text" value=_search placeholder="Search audit events" class="form-control" enter="addSearch"}}
+        {{input type="text" value=_search placeholder=options.search.placeholderText class="form-control" enter="addSearch"}}
         <div class="input-group-btn">
           <button class="btn btn-default" type="button" aria-label="Search" {{action "addSearch"}}>
-            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            <span class="{{options.search.buttonIconClass}}" aria-hidden="true"></span>
           </button>
         </div>
       </div>
     </div>
   {{/unless}}
   {{#each facets as |facet index|}}
-    {{collapsable-facet facet=(mut facet) initOpen=(if index false true) toggleFacet=(action "toggleFacet")}}
+    {{collapsable-facet facet=(mut facet) initOpen=(if index false true) toggleFacet=(action "toggleFacet") options=options.facets}}
   {{/each}}
 </div>
-<div class="{{dataWrapperClass}}">
-  {{applied-facets applied=(mut facets) search=(mut search) toggleFacet=(action "toggleFacet") removeSearch=(action 'removeSearch')}}
+<div class="{{options.dataWrapperClass}}">
+  {{applied-facets applied=(mut facets) search=(mut search) toggleFacet=(action "toggleFacet") removeSearch=(action 'removeSearch') options=options.applied}}
   {{yield}}
 </div>

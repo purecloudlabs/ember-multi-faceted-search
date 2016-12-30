@@ -5,6 +5,7 @@ export default Ember.Component.extend({
   layout,
   collapsed: false,
   initOpen: false,
+  options: {},
   facet: {},
 
   actions: {
@@ -18,6 +19,6 @@ export default Ember.Component.extend({
   },
   didReceiveAttrs() {
     let open = (this.get('initOpen') || this.get('facet.atleastOneSelected'));
-    this.set('open', open);
+    this.setProperties({ open: open, collapsed: open });
   }
 });

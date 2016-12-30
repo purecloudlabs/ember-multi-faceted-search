@@ -1,18 +1,18 @@
-<div class="col-sm-12 well search-facet-applied">
-  <label><strong>Your Selections:</strong></label>
+<div class="{{options.wrapperClass}} search-facet-applied">
+  <label><strong>{{options.headingText}}</strong></label>
   {{#if search}}
-    <span class="btn btn-default">
+    <span class="{{options.selectedClass}}">
       <span class="category-label">Search: {{search}}</span>
       <button type="button" class="close" aria-label="Remove" {{action "removeSearch"}}><span aria-hidden="true">&times;</span></button>
     </span>
   {{/if}}
   {{#each applied as |facet|}}
     {{#if facet.multipleSelected}}
-      <span class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Selected: {{facet.selectedValues}}">
+      <span class="{{options.selectedClass}}" data-toggle="tooltip" data-placement="top" title="Selected: {{facet.selectedValues}}">
         <span class="category-label">{{facet.category}}: {{facet.selected.length}} Selected </span><button type="button" class="close" aria-label="Remove" {{action "removeFacets" facet}}><span aria-hidden="true">&times;</span></button>
       </span>
     {{else if facet.atleastOneSelected}}
-      <span class="btn btn-default">
+      <span class="{{options.selectedClass}}">
         <span class="category-label">{{facet.category}}: {{facet.selectedValues}}</span>
         <button type="button" class="close" aria-label="Remove" {{action "removeFacets" facet}}><span aria-hidden="true">&times;</span></button>
       </span>
