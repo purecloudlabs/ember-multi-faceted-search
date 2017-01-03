@@ -2,7 +2,7 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-cli-multi-faceted-search',
+  name: 'ember-multi-faceted-search',
 
   isDevelopingAddon: function() {
     return true;
