@@ -1,5 +1,5 @@
 {
-  "name": "ember-cli-multi-faceted-search",
+  "name": "ember-multi-faceted-search",
   "version": "0.0.3",
   "description": "Ember CLI addon that provides a multi-faceted search architecture and views for a data set.",
   "directories": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/MyPureCloud/ember-cli-multi-faceted-search.git"
+    "url": "https://github.com/MyPureCloud/ember-multi-faceted-search.git"
   },
   "engines": {
     "node": ">= 0.12.0"
