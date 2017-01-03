@@ -85,7 +85,6 @@ actions: {
 }
 ```
 
-
 ### Search
 
 Adding search is simple!
@@ -97,3 +96,14 @@ Adding search is simple!
 ```
 
 Defining a two-way bound `search` parameter and adding a `searchAction` will generate a search box and notify you when the user initiates a search.  Currently, search is initiated by submitting the search input (ie hitting ENTER or clicking the attached button).
+
+### Options
+
+This addon allows you to manipulate text and css via a passed in configuration object:
+
+```
+{{#multi-faceted-search options=options ...}}
+...
+```
+
+Check the options object in `multi-faceted-search/component.js` for available options.
