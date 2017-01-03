@@ -1,4 +1,4 @@
-# Ember-cli-multi-faceted-search
+# Ember Multi-Faceted Search
 
 This addon provides a view for managing a [faceted search](https://en.wikipedia.org/wiki/Faceted_search) alongside data.  You provide an array of filters with terms, and the addon will allow a user to add and remove these terms while notifying your app - which allows you to handle the data end of things.
 
@@ -6,7 +6,7 @@ This addon provides a view for managing a [faceted search](https://en.wikipedia.
 
 From your project / app, run
 ```
-ember install ember-cli-multi-faceted-search
+ember install ember-multi-faceted-search
 ```
 
 This addon creates a new component that you can use to wrap your data display: `{{multi-faceted-search}}`
@@ -18,9 +18,7 @@ Although styles can be customized, using [Bootstrap 3](http://getbootstrap.com/g
 ### The Component
 ```
 {{#multi-faceted-search facets=yourFacetsArray addFacet=(action 'yourAddFacetAction') removeFacet=(action 'yourRemoveFacetAction')}}
-<table>
-...
-</table>
+// Your data goes here!  In any format, try a <table> or a <ul> or a smiley face!
 {{/multi-faceted-search}}
 ```
 
@@ -29,7 +27,7 @@ Although styles can be customized, using [Bootstrap 3](http://getbootstrap.com/g
 In your app, where you handle the data, add :
 
 ```
-import Facet from 'ember-cli-multi-faceted-search/components/multi-faceted-search/facet';
+import Facet from 'ember-multi-faceted-search/components/multi-faceted-search/facet';
 ```
 
 This is a custom `Ember.Object` that looks like:
