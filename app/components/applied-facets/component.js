@@ -1,1 +1,1 @@
-export { default } from 'ember-cli-multi-faceted-search/components/applied-facets/component';
+export { default } from 'ember-multi-faceted-search/components/applied-facets/component';

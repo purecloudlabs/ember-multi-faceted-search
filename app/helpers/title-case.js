@@ -1,1 +1,1 @@
-export { default, titleCase } from 'ember-cli-multi-faceted-search/title-case/helper';
+export { default, titleCase } from 'ember-multi-faceted-search/title-case/helper';

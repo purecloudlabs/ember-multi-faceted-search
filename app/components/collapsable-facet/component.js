@@ -1,1 +1,1 @@
-export { default } from 'ember-cli-multi-faceted-search/components/collapsable-facet/component';
+export { default } from 'ember-multi-faceted-search/components/collapsable-facet/component';
