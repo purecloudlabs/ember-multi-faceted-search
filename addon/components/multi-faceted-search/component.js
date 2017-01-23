@@ -46,7 +46,7 @@ export default Ember.Component.extend({
       if (Array.isArray(term)) {
         // remove all terms from facet
         term.forEach((t) => Ember.set(t, 'selected', false));
-        this.get('removeFacet')();
+        this.get('removeFacet')(facet.get('category'));
       } else {
         let selected = Ember.get(term, 'selected');
         if (typeof selected === 'undefined' || !selected) {
@@ -55,10 +55,10 @@ export default Ember.Component.extend({
             terms.forEach((t) => Ember.set(t, 'selected', false));
           }
           Ember.set(term, 'selected', true);
-          this.get('addFacet')();
+          this.get('addFacet')(facet.get('category'), term);
         } else {
           Ember.set(term, 'selected', false);
-          this.get('removeFacet')();
+          this.get('removeFacet')(facet.get('category'), term);
         }
       }
     }
