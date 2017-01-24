@@ -19,7 +19,6 @@ export default Ember.Component.extend({
   },
   didReceiveAttrs() {
     let open = (this.get('initOpen') || this.get('facet.atleastOneSelected'));
-    console.log("didReceiveAttrs --> open --> ", open);
     this.setProperties({ open: open, collapsed: open });
   }
 });
