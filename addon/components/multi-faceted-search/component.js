@@ -45,8 +45,10 @@ export default Ember.Component.extend({
     toggleFacet(facet, term) {
       if (Array.isArray(term)) {
         // remove all terms from facet
-        term.forEach((t) => Ember.set(t, 'selected', false));
-        this.get('removeFacet')(facet.get('category'));
+        term.forEach((t) => {
+          Ember.set(t, 'selected', false);
+          this.get('removeFacet')(facet.get('category'), t);
+        });
       } else {
         let selected = Ember.get(term, 'selected');
         if (typeof selected === 'undefined' || !selected) {
