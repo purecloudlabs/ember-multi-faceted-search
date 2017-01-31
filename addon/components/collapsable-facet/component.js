@@ -7,6 +7,9 @@ export default Ember.Component.extend({
   initOpen: false,
   options: {},
   facet: {},
+  facetId: Ember.computed('facet.category', function() {
+    return "mfs" + this.get('facet.category').replace('/', '-') + "-filters";
+  }),
 
   actions: {
     toggleCollapse() {

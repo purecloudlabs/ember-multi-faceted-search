@@ -1,13 +1,13 @@
 <div class="search-facet-group {{options.groupWrapperClass}}">
   <div class="facet-label {{options.groupLabelWrapperClass}}">
     <h4 class="{{options.groupLabelClass}}">
-      <a href="#{{facet.category}}-filters" data-toggle="collapse" {{action "toggleCollapse" preventDefault=false}}>
+      <a href="#{{facetId}}" data-toggle="collapse" {{action "toggleCollapse" preventDefault=false}}>
         {{title-case facet.category}}
         <span class="{{options.groupIconClass}} {{if collapsed options.groupIconClosedClass options.groupIconOpenClass}}" aria-hidden="true"></span>
       </a>
     </h4>
   </div>
-  <div class="{{options.groupListWrapperClass}} collapse{{if open " in"}}" id="{{facet.category}}-filters">
+  <div class="{{options.groupListWrapperClass}} collapse{{if open " in"}}" id="{{facetId}}">
     <div class="{{options.groupListClass}}">
     {{#each facet.terms as |term|}}
       <div class="term">
