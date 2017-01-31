@@ -11,7 +11,7 @@ let Facet = Ember.Object.extend({
   selected: Ember.computed.filterBy('terms', 'selected', true),
   multipleSelected: Ember.computed.gt('selected.length', 1),
   atleastOneSelected: Ember.computed.gt('selected.length', 0),
-  selectedValues: Ember.computed('multipleFacets', 'selected', function() {
+  selectedValues: Ember.computed('multipleSelected', 'selected', function() {
     let terms = this.get('selected');
     if (terms.length > 0) {
       return terms.map(t => t.value).join(", ");
