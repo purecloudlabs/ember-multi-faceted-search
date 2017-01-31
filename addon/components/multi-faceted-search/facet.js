@@ -3,7 +3,7 @@ import Ember from 'ember';
 let Facet = Ember.Object.extend({
   category: "",
   type: "", // "checkbox" or "link"
-  terms: [], // each term: { value: "", count: num.optional, selected: boolean }
+  terms: [], // each term: { value: "", display: string.optional, count: num.optional, selected: boolean }
 
   checkbox: Ember.computed.equal('type', 'checkbox'),
   link: Ember.computed.equal('type', 'link'),
@@ -14,7 +14,7 @@ let Facet = Ember.Object.extend({
   selectedValues: Ember.computed('multipleSelected', 'selected', function() {
     let terms = this.get('selected');
     if (terms.length > 0) {
-      return terms.map(t => t.value).join(", ");
+      return terms.map((t) => t.display || t.value).join(", ");
     } else {
       return "";
     }

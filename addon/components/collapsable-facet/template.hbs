@@ -13,11 +13,11 @@
       <div class="term">
         <span class="term">
         {{#if facet.link}}
-          <a href="#" class="{{if term.selected "active"}}" {{action "toggleFacet" term}}>{{term.value}}</a>
+          <a href="#" class="{{if term.selected "active"}}" {{action "toggleFacet" term}}>{{if term.display term.display term.value}}</a>
         {{else if facet.checkbox}}
           <label>
           {{input type="checkbox" checked=term.selected click=(action "toggleFacet" term)}}
-            {{term.value}}
+            {{if term.display term.display term.value}}
             </label>
         {{/if}}
         </span>
