@@ -37,6 +37,7 @@ This is a custom `Ember.Object` that looks like:
   category: "LabelForFacet",
   type: "checkbox", // or "link"
   terms: [] // each term should be an object with at least : { value: "stringToDisplay", selected: boolean } also optional properties 'display' and 'count',
+  emptyMessage: "Message when no facets to display",
   ...
 }
 ```

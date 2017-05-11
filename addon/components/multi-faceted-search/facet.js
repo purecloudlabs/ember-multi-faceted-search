@@ -4,6 +4,7 @@ let Facet = Ember.Object.extend({
   category: "",
   type: "", // "checkbox" or "link"
   terms: [], // each term: { value: "", display: string.optional, count: num.optional, selected: boolean }
+  emtpyMessage: "Nothing to display",
 
   checkbox: Ember.computed.equal('type', 'checkbox'),
   link: Ember.computed.equal('type', 'link'),
