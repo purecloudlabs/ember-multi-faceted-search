@@ -1,6 +1,6 @@
 {
   "name": "ember-multi-faceted-search",
-  "version": "0.1.10",
+  "version": "0.2.0",
   "description": "Ember CLI addon that provides a multi-faceted search architecture and views for a data set.",
   "directories": {
     "doc": "doc",
