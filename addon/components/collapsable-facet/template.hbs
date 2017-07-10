@@ -20,8 +20,8 @@
               {{if term.display term.display term.value}}
               </label>
           {{else if facet.datetime}}
-            <div class="form-group form-inline">
-              <label for="filter-from-time">{{term.display}} </label>
+            <div class="term form-group form-inline">
+              <label>{{term.display}} </label>
               <span class="{{if facet.hasError "has-error"}}">{{bs-datetimepicker date=term.value sideBySide=true change=(action "toggleFacet" term)}}</span>
             </div>
           {{/if}}
