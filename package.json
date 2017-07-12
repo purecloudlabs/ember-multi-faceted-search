@@ -1,6 +1,6 @@
 {
   "name": "ember-multi-faceted-search",
-  "version": "0.1.10",
+  "version": "0.2.0",
   "description": "Ember CLI addon that provides a multi-faceted search architecture and views for a data set.",
   "directories": {
     "doc": "doc",
@@ -55,7 +55,9 @@
     "ember-cli-babel": "^5.1.7",
     "ember-cli-htmlbars": "^1.0.10",
     "ember-cli-htmlbars-inline-precompile": "^0.3.3",
-    "ember-cli-sass": "^5.5.2"
+    "ember-cli-sass": "^5.5.2",
+    "eonasdan-bootstrap-datetimepicker-npm": "^4.17.42",
+    "ember-cli-bootstrap-datetimepicker": "0.4.1"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"

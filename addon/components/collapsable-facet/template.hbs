@@ -9,25 +9,30 @@
   </div>
   <div class="{{options.groupListWrapperClass}} collapse{{if open " in"}}" id="{{facetId}}">
     <div class="{{options.groupListClass}}">
-    {{#each facet.terms as |term|}}
-      <div class="term">
-        <span class="term">
-        {{#if facet.link}}
-          <a href="#" class="{{if term.selected "active"}}" {{action "toggleFacet" term}}>{{if term.display term.display term.value}}</a>
-        {{else if facet.checkbox}}
-          <label>
-          {{input type="checkbox" checked=term.selected click=(action "toggleFacet" term)}}
-            {{if term.display term.display term.value}}
-            </label>
+      {{#each facet.terms as |term|}}
+        <div class="term">
+          <span class="term">
+          {{#if facet.link}}
+            <a href="#" class="{{if term.selected "active"}}" {{action "toggleFacet" term}}>{{if term.display term.display term.value}}</a>
+          {{else if facet.checkbox}}
+            <label>
+            {{input type="checkbox" checked=term.selected click=(action "toggleFacet" term)}}
+              {{if term.display term.display term.value}}
+              </label>
+          {{else if facet.datetime}}
+            <div class="term form-group form-inline">
+              <label>{{term.display}} </label>
+              <span class="{{if facet.hasError "has-error"}}">{{bs-datetimepicker date=term.value sideBySide=true change=(action "toggleFacet" term)}}</span>
+            </div>
+          {{/if}}
+          </span>
+        {{#if term.count}}
+          <span class="count pull-right">{{term.count}}</span>
         {{/if}}
-        </span>
-      {{#if term.count}}
-        <span class="count pull-right">{{term.count}}</span>
-      {{/if}}
-      </div>
-    {{else}}
-      <div>{{facet.emptyMessage}}</div>
-    {{/each}}
+        </div>
+      {{else}}
+        <div>{{facet.emptyMessage}}</div>
+      {{/each}}
     </div>
   </div>
 </div>
