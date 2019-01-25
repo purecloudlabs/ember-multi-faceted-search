@@ -20,7 +20,8 @@
   },
   "author": "Genesys",
   "contributors": [
-    "Serge Margovsky <smargovsky@gmail.com>"
+    "Serge Margovsky <smargovsky@gmail.com>",
+    "Naeem Tai <naeemtai3@gmail.com>"
   ],
   "license": "MIT",
   "devDependencies": {
