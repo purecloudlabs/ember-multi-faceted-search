@@ -58,12 +58,12 @@
   "dependencies": {
     "ember-chromium": "^4.0.0",
     "ember-cli-babel": "^5.1.7",
+    "ember-cli-bootstrap-datetimepicker": "0.4.1",
     "ember-cli-htmlbars": "^1.0.10",
     "ember-cli-htmlbars-inline-precompile": "^0.3.3",
-    "ember-cli-sass": "^5.5.2",
+    "ember-cli-sass": "^6.0.0",
     "ember-moment": "^7.8.1",
     "eonasdan-bootstrap-datetimepicker-npm": "^4.17.42",
-    "ember-cli-bootstrap-datetimepicker": "0.4.1",
     "moment": "^2.24.0"
   },
   "ember-addon": {
