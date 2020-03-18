@@ -7,8 +7,12 @@ export default Ember.Component.extend({
   initOpen: false,
   options: {},
   facet: {},
-  facetId: Ember.computed('facet.category', function() {
-    return "mfs" + this.get('facet.category').replace(/\//g, '-') + "-filters";
+  facetId: Ember.computed('facet.category', function () {
+    if (this.get('facet.category')) {
+      return "mfs" + this.get('facet.category').replace(/\//g, '-') + "-filters";
+    }
+
+    return "";
   }),
 
   actions: {

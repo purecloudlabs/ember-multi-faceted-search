@@ -5,20 +5,15 @@ moduleForComponent('collapsable-facet', 'Integration | Component | collapsable f
   integration: true
 });
 
-test('it renders', function(assert) {
+test('it renders', function (assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
+  this.set('facet', {
+    category: 'test/category'
+  });
 
-  this.render(hbs`{{collapsable-facet}}`);
+  this.render(hbs`{{collapsable-facet facet=facet}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$().text().trim(), 'Test/Category');
 
-  // Template block usage:
-  this.render(hbs`
-    {{#collapsable-facet}}
-      template block text
-    {{/collapsable-facet}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
 });
