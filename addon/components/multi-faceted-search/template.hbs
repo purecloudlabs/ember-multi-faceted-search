@@ -2,7 +2,7 @@
   {{#unless noSearch}}
     <div class="form-group {{options.search.wrapperClass}}">
       <div class="input-group">
-        {{input type="text" value=_search placeholder=options.search.placeholderText class="form-control" enter="addSearch"}}
+        {{input type="text" value=_search placeholder=options.search.placeholderText class="form-control" enter=(action "addSearch")}}
         <div class="input-group-btn">
           <button class="btn btn-default" type="button" aria-label="Search" {{action "addSearch"}}>
             <span class="{{options.search.buttonIconClass}}" aria-hidden="true"></span>
