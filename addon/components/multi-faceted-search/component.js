@@ -63,6 +63,10 @@ export default Ember.Component.extend({
           this.get('removeFacet')(facet.get('category'), term);
         }
       }
+    },
+    facetChanged(index, facet) {
+      this.get('facets')[index] = facet;
+      this.notifyPropertyChange('facets');
     }
   }
 });

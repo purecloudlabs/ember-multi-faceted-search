@@ -14,6 +14,9 @@ export default Ember.Component.extend({
 
     return "";
   }),
+  facetObserver: Ember.observer('facet', function () {
+    this.get('facetChanged')(this.get('facet'));
+  }),
 
   actions: {
     toggleCollapse() {
